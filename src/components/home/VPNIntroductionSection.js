@@ -4,7 +4,7 @@
 import Link from 'next/link';
 export default function VpnIntroductionSection() {
     return (
-        <section className="w-full bg-white py-15 px-6 lg:px-20" id="home">
+        <section className="w-full bg-white py-15 px-6 mb-3 lg:px-20" id="home">
             <div
                 className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 w-full h-full"
                 style={{
