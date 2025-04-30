@@ -29,7 +29,7 @@ const steps = [
 
 export default function DownloadProcess() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 mt-3 bg-white">
       <div className="text-center mb-12">
         <span className="bg-green-100 text-green-600 text-sm font-semibold px-4 py-2 rounded-full">
           How it is work
