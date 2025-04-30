@@ -42,15 +42,36 @@ export default function LoginButtonWithModal({ open, handleClose }) {
                 </IconButton>
             </Box>
 
-            <Tabs value={tab} onChange={handleTabChange} centered>
+            <Tabs
+                value={tab}
+                onChange={handleTabChange}
+                centered
+                textColor="inherit"
+                TabIndicatorProps={{
+                    style: {
+                        backgroundColor: "green", // Tab indicator color
+                    },
+                }}
+                sx={{
+                    "& .MuiTab-root": {
+                        color: "gray", // Default text color
+                    },
+                    "& .Mui-selected": {
+                        color: "black",
+                        fontWeight: "bold" // Selected tab text color
+                    },
+                }}
+            >
                 <Tab label="Sign In" />
                 <Tab label="Create an account" />
             </Tabs>
+
 
             <DialogContent sx={{ pt: 1, px: 10 }}>
                 <Typography variant="h6" fontWeight="bold" mb={2}>
                     {tab === 0 ? "Welcome Back" : "Create Your Account"}
                 </Typography>
+
 
                 <TextField
                     variant="standard"
@@ -95,11 +116,26 @@ export default function LoginButtonWithModal({ open, handleClose }) {
                 />
 
                 <Box display="flex" justifyContent="space-between" alignItems="center" my={1}>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="Remember Me" />
+                    <FormControlLabel
+                        sx={{ color: "gray" }}
+                        control={
+                            <Checkbox
+                                defaultChecked
+                                sx={{
+                                    color: "green", // unchecked color
+                                    '&.Mui-checked': {
+                                        color: "green", // checked color
+                                    }
+                                }}
+                            />
+                        }
+                        label="Remember Me"
+                    />
                     <Button size="small" sx={{ color: "green" }}>
                         Forgot Password
                     </Button>
                 </Box>
+
 
                 <Button
                     variant="contained"
@@ -110,7 +146,8 @@ export default function LoginButtonWithModal({ open, handleClose }) {
                     Login
                 </Button>
 
-                <Divider>Instant Login</Divider>
+                <Divider sx={{ color: "gray" }}>Instant Login</Divider>
+
 
                 <Button
                     fullWidth
@@ -123,10 +160,21 @@ export default function LoginButtonWithModal({ open, handleClose }) {
                             height={20}
                         />
                     }
-                    sx={{ mt: 1, borderRadius: "8px", textTransform: "none" }}
+                    sx={{
+                        mt: 1,
+                        borderRadius: "8px",
+                        textTransform: "none",
+                        color: "green", // set text color
+                        borderColor: "gray", // optional: to match border color
+                        '&:hover': {
+                            borderColor: 'gray',
+                            color: 'gray',
+                        }
+                    }}
                 >
                     Continue with Google
                 </Button>
+
 
                 <Button
                     fullWidth
@@ -139,7 +187,17 @@ export default function LoginButtonWithModal({ open, handleClose }) {
                             height={20}
                         />
                     }
-                    sx={{ mt: 1, borderRadius: "8px", textTransform: "none", mb: 1 }}
+                    sx={{
+                        mt: 1,
+                        borderRadius: "8px",
+                        textTransform: "none",
+                        color: "green", // set text color
+                        borderColor: "gray", // optional: to match border color
+                        '&:hover': {
+                            borderColor: 'gray',
+                            color: 'gray',
+                        }
+                    }}
                 >
                     Continue with Apple
                 </Button>
