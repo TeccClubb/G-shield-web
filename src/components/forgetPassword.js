@@ -59,8 +59,9 @@ const ForgotPasswordModal = ({ open, onClose }) => {
             <div className="text-center mt-5">
               <button
                 onClick={() => {
-                  handleClose()
+                  
                   setIsLoginOpen(true)
+                  onclose()
                 }}
 
                 className=" text-green-700 text-base font-bold font-['DM_Sans'] leading-tight"
@@ -68,8 +69,11 @@ const ForgotPasswordModal = ({ open, onClose }) => {
                 Back to login?
               </button>
               <LoginButtonWithModal
+
                 open={isLoginOpen}
-                handleClose={() => setIsLoginOpen(false)}
+                handleClose={() =>
+                  { onClose()
+                   setIsLoginOpen(false)}}
               />
             </div>
           </div>
