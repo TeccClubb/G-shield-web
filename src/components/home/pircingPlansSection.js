@@ -49,11 +49,11 @@ const plans = [
 
 const PricingPlans = () => {
   return (
-    <section className="py-16 mt-3  g:px-20 px-6 bg-white text-center">
-      <div className='max-w-6xl mx-auto px-4'>
+    <section id="pricing" data-aos="fade-down" className="py-16 mt-3  g:px-20 px-6 bg-white text-center">
+      <div data-aos="zoom-in-up" className='max-w-6xl mx-auto px-4'>
 
         <div className="inline-block px-4 py-1 mb-4 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-          Features
+          Pricing
         </div>
         <h2 className="  md:text-4xl   mb-4 text-black text-5xl font-semibold font-['Poppins'] leading-[59px]">Choose Your VPN Plan</h2>
         <div className="text-center max-w-2xl m-auto text-auto">
@@ -66,12 +66,14 @@ const PricingPlans = () => {
       <div className="flex flex-col md:flex-row shadow-0  justify-center gap-6 px-4 py-10">
         {plans.map((plan, idx) => (
           <div
+          
           key={idx}
           className={`rounded-2xl w-full md:w-[300px] h-[500px] flex flex-col justify-between ${plan.highlighted ? 'bg-green-600 text-white' : 'bg-neutral-100 text-black'
             }`}
         >
             <Card
               elevation={0}
+              data-aos="zoom-in-down"
               className="!shadow-none !bg-transparent !rounded-2xl !overflow-hidden h-full flex flex-col justify-between"
             >
               <CardContent
@@ -92,8 +94,9 @@ const PricingPlans = () => {
                   <div className="text-base font-semibold mt-2">{plan.plan}</div>
                   <ul className="space-y-4 text-sm mt-4">
                     {plan.features.map((feature, index) => (
-                      <li key={index} className="flex items-center gap-2">
+                      <li key={index} className="flex items-center gap-2" data-aos="zoom-out-up">
                         <div
+                        
                           className={`rounded-full p-1 ${plan.highlighted ? 'bg-white' : 'bg-green-600'}`} // Set background white for highlighted, green for non-highlighted
                           style={{ width: '24px', height: '24px' }} // Adjust size of the background for the icon
                         >

@@ -1,11 +1,19 @@
 
 
 import React from "react";
-
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 const ActiveServers = () => {
+
+    useEffect(() => {
+        const AOS = require('aos');  // // Import AOS library for animations
+        AOS.init({ duration: 1200, once: true });
+    }, []);
+
     return (
-        <div className="bg-white mt-3 py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto text-center">
+        <div data-aos="fade-up" className="bg-white mt-3 py-16 px-4 sm:px-6 lg:px-8">
+            <div data-aos="zoom-out-up" className="max-w-7xl mx-auto text-center">
                 <span className="inline-block bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">
                     Facts
                 </span>
@@ -20,11 +28,11 @@ const ActiveServers = () => {
 
 
             {/* Map with dots */}
-            <div className="md:flex flex-wrap justify-center   gap-8 mt-10">
+            <div  data-aos="zoom-out-down" className="md:flex flex-wrap justify-center   gap-8 mt-10">
 
 
 
-                <div className="relative flex-1 max-w-4xl mx-auto mb-12">
+                <div data-aos="slide-left" className="relative flex-1 max-w-4xl mx-auto mb-12">
                     <img
                         src="/home/mapImg.png"
                         alt="World Map"
@@ -35,7 +43,7 @@ const ActiveServers = () => {
                 </div>
 
                 {/* Continent cards */}
-                <div className="flex-1">
+                <div  data-aos="slide-right" className="flex-1">
                     <p className="text-gray-500 text-left max-w-md mx-auto mb-10">
                         These speed excellent. It's a fast connection safety Internet leading
                         speeds across its network.
