@@ -1,5 +1,8 @@
-"use client"
+"use client";
 import Image from "next/image";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const steps = [
   {
@@ -13,7 +16,6 @@ const steps = [
     description:
       "Get the GShield VPN app on your device by downloading it from our website or app store.",
     icon: "/home/instant-setup.svg",
-   
   },
   {
     id: 3,
@@ -28,18 +30,24 @@ const steps = [
 ];
 
 export default function DownloadProcess() {
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+}, []);
   return (
-    <section className="py-16 mt-3 bg-white">
-      <div className="text-center mb-12">
-        <span className="bg-green-100 text-green-600 text-sm font-semibold px-4 py-2 rounded-full">
+    <section className="py-16 mt-3 bg-white" data-aos="fade-up">
+      <div className="text-center mb-12" data-aos="fade-down">
+        <span className="bg-green-100 text-green-600 text-sm font-semibold px-4 py-2 rounded-full" data-aos="down">
           How it is work
         </span>
-        <h2 className="text-2xl md:text-4xl font-bold mt-4">
+        <h2 className="text-2xl md:text-4xl font-bold mt-4"  data-aos="zoom-in">
           GShield Download And Installing Process
         </h2>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 md:px-8 grid md:grid-cols-2 items-center gap-12">
+      <div
+        className="max-w-6xl mx-auto px-4 md:px-8 grid md:grid-cols-2 items-center gap-12"
+        data-aos="fade-up"
+      >
         {/* Left Side - Steps */}
         <div className="relative">
           <div className="absolute left-5 top-6 bottom-6 w-[1px] bg-gray-200"></div>
@@ -48,20 +56,24 @@ export default function DownloadProcess() {
               <div
                 key={step.id}
                 className="relative flex items-start gap-6 group cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
               >
                 <div className="flex flex-col items-center relative z-10">
-                  <div className="absolute  left-2/2 transform -translate-x-2/2 z-10">
-                    <div className="w-4 h-4 flex items-center text-xs justify-center bg-green-100  font-bold rounded-full  border-2 border-white shadow group-hover:bg-green-600 group-hover:text-white transition" >
+                  <div className="absolute left-2/2 transform -translate-x-2/2 z-10">
+                    <div className="w-4 h-4 flex items-center text-xs justify-center bg-green-100 font-bold rounded-full border-2 border-white shadow group-hover:bg-green-600 group-hover:text-white transition">
                       {step.id}
                     </div>
                   </div>
-                  <div className="w-10 h-10 bg-white p-2 rounded-full  border-white flex items-center justify-center shadow  border group-hover:border-green-500  group-hover:bg-green-600">
+                  <div className="w-10 h-10 bg-white p-2 rounded-full border-white flex items-center justify-center shadow border group-hover:border-green-500 group-hover:bg-green-600">
                     <Image src={step.icon} alt="step-icon" width={24} height={24} />
                   </div>
                 </div>
                 <div>
                   <h3
-                    className={`text-lg mt-2 font-bold transition-colors group-hover:text-green-600 ${step.highlight ? "text-green-600" : "text-black"}`}
+                    className={`text-lg mt-2 font-bold transition-colors group-hover:text-green-600 ${
+                      step.highlight ? "text-green-600" : "text-black"
+                    }`}
                   >
                     {step.title}
                   </h3>
@@ -77,7 +89,7 @@ export default function DownloadProcess() {
         </div>
 
         {/* Right Side - Illustration */}
-        <div className="flex justify-center">
+        <div className="flex justify-center" data-aos="zoom-in" data-aos-delay="400">
           <Image
             src="/home/dowload-installing.png"
             alt="Installation Illustration"
