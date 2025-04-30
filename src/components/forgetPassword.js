@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Modal, TextField, IconButton, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import EmailIcon from "@mui/icons-material/Email";
+import LoginButtonWithModal from "@/app/login-form/page";
 
 const ForgotPasswordModal = ({ open, onClose }) => {
   const [email, setEmail] = useState("");
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
 
   return (
     <Modal open={open} onClose={onClose}>
@@ -12,7 +15,7 @@ const ForgotPasswordModal = ({ open, onClose }) => {
         <div className="bg-white text-center w-full max-w-lg mx-auto p-6 rounded-md shadow-lg relative">
           {/* Header: Logo left, Close right */}
           <div className="flex justify-between items-center mb-6">
-          <img src="/shieldVpnLogo.png" alt="Logo" className="w-10 h-10 mr-2" />
+            <img src="/shieldVpnLogo.png" alt="Logo" className="w-10 h-10 mr-2" />
 
             <IconButton onClick={onClose} className="text-gray-500">
               <CloseIcon />
@@ -27,40 +30,48 @@ const ForgotPasswordModal = ({ open, onClose }) => {
           {/* Input */}
           <div className="px-15">
 
-          <div className="mb-4 mt-6">
-            <TextField
+            <div className="mb-4 mt-6">
+              <TextField
+                fullWidth
+                label="Email or Username"
+                variant="standard"
+                size="small"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                InputProps={{
+                  endAdornment: (
+                    <EmailIcon className="text-gray-400 mr-2" fontSize="small" />
+                  ),
+                }}
+              />
+            </div>
+
+            {/* Submit Button */}
+            <Button
+              variant="contained"
               fullWidth
-              label="Email or Username"
-              variant="standard"
-              size="small"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              InputProps={{
-                endAdornment: (
-                  <EmailIcon className="text-gray-400 mr-2" fontSize="small" />
-                ),
-              }}
-            />
-          </div>
-
-          {/* Submit Button */}
-          <Button
-            variant="contained"
-            fullWidth
-            style={{ backgroundColor: "#188c41", textTransform: "none",marginTop: "10px" }}
-          >
-            Submit  
-          </Button>
-
-          {/* Back to login */}
-          <div className="text-center mt-5">
-            <button
-              onClick={onClose}
-              className=" text-green-700 text-base font-bold font-['DM_Sans'] leading-tight"
+              style={{ backgroundColor: "#188c41", textTransform: "none", marginTop: "10px" }}
             >
-              Back to login?
-            </button>
-          </div>
+              Submit
+            </Button>
+
+            {/* Back to login */}
+            <div className="text-center mt-5">
+              <button
+                onClick={() => {
+                  handleClose()
+                  setIsLoginOpen(true)
+                }}
+
+                className=" text-green-700 text-base font-bold font-['DM_Sans'] leading-tight"
+              >
+                Back to login?
+              </button>
+              <LoginButtonWithModal
+                open={isLoginOpen}
+                handleClose={() => setIsLoginOpen(false)}
+              />
+            </div>
           </div>
         </div>
       </div>
