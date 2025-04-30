@@ -7,6 +7,7 @@ import Link from 'next/link';
 import VpnIntroductionSection from '@/components/home/VPNIntroductionSection';
 import PricingPlans from '@/components/home/pircingPlansSection';
 import DownloadProcess from '@/components/home/download-installing';
+import ActiveServers from '@/components/home/activeServer';
 export default function HeroSection() {
     return (
         <div className='bg-zinc-300   '>
@@ -15,6 +16,7 @@ export default function HeroSection() {
              <FeaturesSection></FeaturesSection>
              <PricingPlans></PricingPlans>
              <DownloadProcess></DownloadProcess>
+             <ActiveServers></ActiveServers>
 
             </div>
             
