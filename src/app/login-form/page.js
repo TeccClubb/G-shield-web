@@ -78,28 +78,31 @@ export default function LoginButtonWithModal({ open, handleClose }) {
                 {
                     
                 }
-                {
-                    tab != 0 ?  <TextField
-                    variant="standard"
-                    label="Username"
-                    fullWidth
-                    margin="dense"
-                    type="email"
-                    defaultValue="KarimLucky"
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <Image
-                                    src="/Log-icon/email.svg"
-                                    alt="Email Icon"
-                                    width={20}
-                                    height={15}
-                                />
-                            </InputAdornment>
-                        ),
-                    }}
-                />: null
-                }
+               {
+  tab !== 0 ? (
+    <TextField
+      variant="standard"
+      label="Username"
+      fullWidth
+      margin="dense"
+      type="text"
+      defaultValue="Altaf&Karim"
+      InputProps={{
+        endAdornment: (
+          <InputAdornment position="end">
+            <Image
+              src="/Log-icon/account-grey-icon.png" // You should add this icon to your public folder
+              alt="User Icon"
+              width={20}
+              height={20}
+            />
+          </InputAdornment>
+        ),
+      }}
+    />
+  ) : null
+}
+
                
 
 
