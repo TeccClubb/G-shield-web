@@ -4,9 +4,12 @@ import { Card, CardContent, Button } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import Image from 'next/image'
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
+import { CHECKOUT_PAGE_PATH } from '@/lib/pathnames';
 
 const plans = [
   {
+    id: 1,
     badge: 'FREE',
     badgeColor: 'bg-green-100 text-green-500',
     price: '$0.00',
@@ -16,6 +19,7 @@ const plans = [
     highlighted: false,
   },
   {
+    id: 3,
     badge: 'POPULAR',
     badgeColor: 'bg-white text-green-600 font-bold',
     price: '$9.99',
@@ -31,6 +35,7 @@ const plans = [
     highlighted: true,
   },
   {
+    id: 2,
     badge: 'ADVANCED',
     badgeColor: 'bg-green-100 text-green-500',
     price: '$19.99',
@@ -121,7 +126,8 @@ const PricingPlans = () => {
                 {/* Button */}
                 <div className="mt-6">
                   <Button
-
+                  component={Link}
+                  href={CHECKOUT_PAGE_PATH(plan.id)}
                     variant="contained"
                     fullWidth
                     sx={{

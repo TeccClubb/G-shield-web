@@ -24,10 +24,10 @@ export default function Navbar() {
 
                 {/* Desktop Nav */}
                 <div className="hidden lg:flex items-center space-x-6 text-gray-600">
-                    <Link href="#pricing" className="text-black text-base font-semibold font-['Manrope'] leading-normal">Plans</Link>
-                    <Link href="#feature" className="text-black text-base font-semibold font-['Manrope'] leading-normal">Features</Link>
+                    <Link href="/?scrollTo=pricing" scroll={false} className="text-black text-base font-semibold font-['Manrope'] leading-normal">Plans</Link>
+                    <Link href="/?scrollTo=feature" scroll={false} className="text-black text-base font-semibold font-['Manrope'] leading-normal">Features</Link>
                     <Link href="#services" className="text-black text-base font-semibold font-['Manrope'] leading-normal">Services</Link>
-                    <Link href="#pricing" className="text-black text-base font-semibold font-['Manrope'] leading-normal">Pricing</Link>
+                    <Link href="/?scrollTo=pricing" scroll={false} className="text-black text-base font-semibold font-['Manrope'] leading-normal">Pricing</Link>
                     <Link href="#pricing" className="text-black text-base font-semibold font-['Manrope'] leading-normal">Bussiness VPN </Link>
                 </div>
 
@@ -62,7 +62,8 @@ export default function Navbar() {
                     <Link href="#pricing" className="block hover:text-black">Plans</Link>
                     <Link href="#pricing" className="block hover:text-black">Features</Link>
                     <Link href="#pricing" className="block hover:text-black">Services</Link>
-                    <Link href="#pricing" className="block hover:text-black">Pricing</Link>
+                    <Link href="/?scrollTo=pricing" scroll={false}>Pricing</Link>
+
                     <Link href="#pricing" className="block hover:text-black">Bussiness VPN</Link>
                     <div className='flex flex-col space-y-3'>
 

@@ -4,9 +4,18 @@ import AppleIcon from "@/icons/AppleIcon";
 import GooglePlayIcon from "@/icons/GooglePlayIcon";
 import { Button } from "@mui/material";
 import Link from "next/link";
+  
+import Aos from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 export default function DownloadSection() {
+
+  useEffect(() => { 
+    Aos.init({ duration: 1200 });
+  }
+  , []);
   return (
-    <section className="w-full bg-white py-15 px-6 lg:px-20">
+    <section data-aos="fade-up" className="w-full bg-white mt-3 py-15 px-6 lg:px-20">
       <div
         className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 w-full h-full"
         style={{
@@ -17,7 +26,7 @@ export default function DownloadSection() {
         }}
       >
         {/* Left Content */}
-        <div className="flex-1 text-center lg:text-left">
+        <div  data-aos="zoom-in-up"className="flex-1 text-center lg:text-left">
           <div className="inline-block px-4 py-1 self-center lg:self-start mb-4 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
             Download Mobile App
           </div>
@@ -74,7 +83,7 @@ export default function DownloadSection() {
         </div>
 
         {/* Right Content (Phone Image) */}
-        <div className="flex-1 flex justify-center lg:justify-end">
+        <div data-aos="" className="flex-1 flex justify-center lg:justify-end">
           <img
             src="/home/mobileMokup.png" // Replace with actual path
             alt="Mobile VPN App"

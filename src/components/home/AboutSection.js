@@ -4,10 +4,17 @@ import { Button } from "@mui/material";
 import { Check, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 export default function AboutSection() {
+  useEffect(() => {
+    Aos.init({ duration: 1200 }); 
+
+  }, []); // Initialize AOS animations
+      
   return (
-    <section className="w-full bg-white py-15 px-6 lg:px-20" id="home">
+    <section data-aos="fade-up"  className="w-full bg-white py-15 px-6 lg:px-20" id="home">
       <div
         className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-16 w-full h-full"
         style={{
@@ -18,7 +25,7 @@ export default function AboutSection() {
         }}
       >
         {/* Left Content (Laptop Image) */}
-        <div className="w-full flex justify-center items-center">
+        <div  data-aos="fade-left" className="w-full flex justify-center items-center">
           <img
             src="/laptop.png" // Replace with actual path
             alt="Laptop VPN App"
@@ -27,7 +34,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right Content */}
-        <div className="w-full flex flex-col lg:items-center text-center lg:text-left">
+        <div data-aos="fade-right" className="w-full flex flex-col lg:items-center text-center lg:text-left">
           <div className="inline-block px-4 py-1 self-center lg:self-start mb-4 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
             About Us
           </div>

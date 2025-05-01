@@ -14,3 +14,5 @@ export const PAYMENT_PROCESSING_PAGE_PATH = "/payment-processing";
 export const INVOICE_PAGE_PATH = "/invoice";
 
 export const DOWNLOADS_PAGE_PATH = "/downloads";
+
+export const LOGIN_PAGE_PATH = "/login-form";
