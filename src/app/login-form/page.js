@@ -40,7 +40,7 @@ export default function LoginButtonWithModal({ open, handleClose }) {
     
 
     return (
-        <>
+          <>
             <Dialog
                 open={open}
                 onClose={handleClose}
