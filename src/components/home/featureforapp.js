@@ -37,7 +37,7 @@ export default function FeaturesSection() {
                 >
                     Features
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4" data-aos="zoom-in">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black" data-aos="zoom-in">
                     Features for Our App
                 </h2>
                 <p className="text-gray-500 mb-12" data-aos="fade-up">
@@ -57,7 +57,7 @@ export default function FeaturesSection() {
                                         className="h-6 w-6"
                                     />
                                 </div>
-                                <h3 className="text-lg font-bold">{feature.title}</h3>
+                                <h3 className="text-lg  text-black font-bold">{feature.title}</h3>
                                 <p className="text-gray-500">{feature.description}</p>
                             </div>
                         ))}
