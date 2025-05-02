@@ -14,7 +14,7 @@ export default function Navbar() {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
 
     return (
-        <nav className={`w-full shadow-sm ${pathname === '/what-is-vpn' ? 'bg-[#F6F6F6]' : 'bg-white'}`}>
+        <nav className={`w-full font-manrope shadow-sm ${pathname === '/what-is-vpn' ? 'bg-[#F6F6F6]' : 'bg-white'}`}>
             <div className="w-[90%] mx-auto px-4 py-3 flex cursor-pointer items-center justify-between">
                 {/* Logo */}
                 <div onClick={() => router.push("/")} className="text-3xl flex font-bold text-gray-800">
@@ -23,12 +23,12 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Nav */}
-                <div className="hidden lg:flex items-center space-x-6 text-gray-600">
-                    <Link href="/?scrollTo=pricing" scroll={false} className="text-black text-base font-semibold font-['Manrope'] leading-normal">Plans</Link>
-                    <Link href="/?scrollTo=feature" scroll={false} className="text-black text-base font-semibold font-['Manrope'] leading-normal">Features</Link>
-                    <Link href="#services" className="text-black text-base font-semibold font-['Manrope'] leading-normal">Services</Link>
-                    <Link href="/?scrollTo=pricing" scroll={false} className="text-black text-base font-semibold font-['Manrope'] leading-normal">Pricing</Link>
-                    <Link href="#pricing" className="text-black text-base font-semibold font-['Manrope'] leading-normal">Bussiness VPN </Link>
+                <div className="hidden lg:flex items-center space-x-6">
+                    <Link href="/" scroll={false} className="text-black text-base font-semibold  font-manrope   leading-normal">Home</Link>
+                    <Link href="/?scrollTo=feature" scroll={false} className="text-black text-base font-semibold   leading-normal">Features</Link>
+                    <Link href="/services" className="text-black text-base font-semibold   leading-normal">Servers</Link>
+                    <Link href="/?scrollTo=pricing" scroll={false} className="text-black text-base font-semibold   leading-normal">Pricing</Link>
+                    {/* <Link href="#pricing" className="text-black text-base font-semibold  leading-normal">Bussiness VPN </Link> */}
                 </div>
 
                 {/* Right CTA Button Group (Desktop) */}
@@ -59,12 +59,12 @@ export default function Navbar() {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="lg:hidden px-6 pb-4 space-y-3 text-gray-700 text-sm">
-                    <Link href="#pricing" className="block hover:text-black">Plans</Link>
-                    <Link href="#pricing" className="block hover:text-black">Features</Link>
-                    <Link href="#pricing" className="block hover:text-black">Services</Link>
-                    <Link href="/?scrollTo=pricing" scroll={false}>Pricing</Link>
+                    <Link href="/" className="block hover:text-black text-black text-base font-semibold  font-manrope   leading-normal">Home</Link>
+                    <Link href="#pricing" className="block hover:text-black text-black text-base font-semibold  font-manrope   leading-normal">Features</Link>
+                    <Link href="/servers" className="block hover:text-black text-black text-base font-semibold  font-manrope   leading-normal">Servers</Link>
+                    <Link href="/?scrollTo=pricing" className='text-black text-base font-semibold  font-manrope   leading-normal' scroll={false}>Pricing</Link>
 
-                    <Link href="#pricing" className="block hover:text-black">Bussiness VPN</Link>
+                    {/* <Link href="#pricing" className="block hover:text-black text-black text-base font-semibold  font-manrope   leading-normal">Bussiness VPN</Link> */}
                     <div className='flex flex-col space-y-3'>
 
                         <div
