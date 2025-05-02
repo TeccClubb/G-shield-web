@@ -21,8 +21,8 @@ export default function VpnIntroductionSection() {
                 }}  
             >
                 {/* Left Content */}
-                <div data-aos="fade-right" className="flex-1 text-center lg:text-left">
-                    <h1 className="text-4xl md:text-5xl font-bold   mb-6 leading-tight">
+                <div  className="flex-1 text-center lg:text-left">
+                <h1 className="text-4xl md:text-5xl font-bold  mb-6 leading-tight">
                        
                         <span className="text-black">  Stay private and<br />
                         Access Worldwide<br />Connect</span>

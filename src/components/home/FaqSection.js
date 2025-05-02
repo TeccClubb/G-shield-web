@@ -89,7 +89,7 @@ export default function FaqSection() {
               </span>
             </button>
             {openIndex === index && (
-              <div className="px-6 pb-4 font-Poppins text-black text-base font-normal text-black bg-white">
+              <div className="px-6 pb-4 font-Poppins text-base font-normal text-black bg-white">
                 {faq.answer}
               </div>
             )}
