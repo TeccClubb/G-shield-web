@@ -185,6 +185,7 @@ export default function LoginButtonWithModal({ open, handleClose }) {
                                 }
                                 label="Remember Me"
                             />
+                            
                             <Button size="small" sx={{ color: "green" }}
                                 onClick={() => {
                                     handleClose();
