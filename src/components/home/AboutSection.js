@@ -14,7 +14,7 @@ export default function AboutSection() {
   }, []); // Initialize AOS animations
       
   return (
-    <section data-aos="fade-up"  className="w-full bg-white py-15 px-6 lg:px-20" id="home">
+    <section  data-aos="fade-up"  className=" overflow-hidden w-full bg-white py-15 px-6 lg:px-20" id="home">
       <div
         className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-16 w-full h-full"
         style={{

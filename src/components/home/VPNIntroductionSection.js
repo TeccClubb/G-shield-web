@@ -10,9 +10,9 @@ export default function VpnIntroductionSection() {
         AOS.init({ duration: 1200, once: true });
     }, []);
     return (
-        <section data-aos="fade-down" className="w-full bg-white py-15 px-6 mb-3 lg:px-20" id="home">
+        <section data-aos="fade-down" className=" overflow-hidden w-full bg-white py-15 px-6 mb-3 lg:px-20" id="home">
             <div
-                className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 w-full h-full"
+                className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16  h-full"
                 style={{
                     backgroundImage: "url('/home/bgimg.png')",
                     backgroundSize: "cover",
@@ -21,7 +21,7 @@ export default function VpnIntroductionSection() {
                 }}  
             >
                 {/* Left Content */}
-                <div data-aos="fade-right" className="flex-1 text-center lg:text-left">
+                <div  className="flex-1 text-center lg:text-left">
                     <h1 className="text-4xl md:text-5xl font-bold  mb-6 leading-tight">
                        
                         <span className="text-black">  Stay private and<br />

@@ -15,7 +15,7 @@ export default function DownloadSection() {
   }
   , []);
   return (
-    <section data-aos="fade-up" className="w-full bg-white mt-3 py-15 px-6 lg:px-20">
+    <section data-aos="fade-up" className="w-full bg-white mt-3 py-15 px-6 lg:px-20 overflow-hidden">
       <div
         className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 w-full h-full"
         style={{
