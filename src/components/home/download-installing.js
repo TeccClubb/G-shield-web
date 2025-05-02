@@ -15,7 +15,7 @@ const steps = [
     title: "Instant Setup/Install",
     description:
       "Get the GShield VPN app on your device by downloading it from our website or app store.",
-    icon: "/home/instant-setup.svg",
+    icon: "/home/setting-icon.png",
   },
   {
     id: 3,
@@ -32,14 +32,14 @@ const steps = [
 export default function DownloadProcess() {
   useEffect(() => {
     AOS.init({ duration: 1200 });
-}, []);
+  }, []);
   return (
     <section className="py-16 mt-3 bg-white overflow-hidden" data-aos="fade-up">
       <div className="text-center mb-12" data-aos="fade-down">
         <span className="bg-green-100 text-green-600 text-sm font-semibold px-4 py-2 rounded-full" data-aos="down">
           How it is work
         </span>
-        <h2 className="text-2xl md:text-4xl font-bold mt-4 text-black"  data-aos="zoom-in">
+        <h2 className="text-2xl md:text-4xl font-bold mt-4 text-black" data-aos="zoom-in">
           GShield Download And Installing Process
         </h2>
       </div>
@@ -57,23 +57,25 @@ export default function DownloadProcess() {
                 key={step.id}
                 className="relative flex items-start gap-6 group cursor-pointer"
                 data-aos="fade-up"
-               
+
               >
                 <div className="flex flex-col items-center relative z-10">
                   <div className="absolute left-2/2 transform -translate-x-2/2 z-10">
-                    <div className="w-4 h-4 flex items-center text-xs justify-center bg-green-100 font-bold rounded-full border-2 border-white shadow group-hover:bg-green-600 group-hover:text-white transition">
+                    <div className="w-4 h-4 flex items-center text-xs justify-center bg-green-100 font-bold rounded-full border-2 border-white shadow group-hover:bg-green-600 group-hover:text-black transition">
                       {step.id}
                     </div>
                   </div>
                   <div className="w-10 h-10 bg-white p-2 rounded-full border-white flex items-center justify-center shadow border group-hover:border-green-500 group-hover:bg-green-600">
-                    <Image src={step.icon} alt="step-icon" width={24} height={24} />
+                    <div className="group-hover:brightness-0 group-hover:invert transition duration-300">
+                      <Image src={step.icon} alt="step-icon" width={24} height={24} />
+                    </div>
                   </div>
+
                 </div>
                 <div>
                   <h3
-                    className={`text-lg mt-2 font-bold transition-colors group-hover:text-green-600 ${
-                      step.highlight ? "text-green-600" : "text-black"
-                    }`}
+                    className={`text-lg mt-2 font-bold transition-colors group-hover:text-green-600 ${step.highlight ? "text-green-600" : "text-black"
+                      }`}
                   >
                     {step.title}
                   </h3>
