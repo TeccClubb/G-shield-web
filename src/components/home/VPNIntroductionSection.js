@@ -21,22 +21,22 @@ export default function VpnIntroductionSection() {
                 }}  
             >
                 {/* Left Content */}
-                <div  className="flex-1 text-center lg:text-left">
-                <h1 className="text-4xl md:text-5xl font-bold  mb-6 leading-tight">
-                       
-                        <span className="text-black">  Stay private and<br />
-                        Access Worldwide<br />Connect</span>
-                    </h1>
-                    <p className="text-zinc-500 text-lg mb-8 max-w-md mx-auto lg:mx-0">
-                        Surf the web without tracking with a VPN, protect your devices & identity with an all-in-one app.
-                    </p>
-                    <Link
-                        href="/pircing"
-                        className="px-4 py-2 rounded-full bg-green-700 text-white text-sm hover:bg-green-800 transition"
-                    >
-                        Get Started
-                    </Link>
-                </div>
+                <div className="flex-1 text-center lg:text-left">
+    <h1 className="text-4xl md:text-5xl font-bold  mb-6 leading-tight">
+        <span className="text-black">  Stay private and<br />
+        Access Worldwide<br />Connect</span>
+    </h1>
+    <p className="text-zinc-500 text-lg mb-8 max-w-md mx-auto lg:mx-0">
+        Surf the web without tracking with a VPN, protect your devices & identity with an all-in-one app.
+    </p>
+    <Link
+        href="/pircing"
+        className="px-4 py-2 rounded-full bg-green-700 text-white text-sm hover:bg-green-800 transition"
+    >
+        Get Started
+    </Link>
+</div>
+
 
                 {/* Right Content (Phone Image) */}
                 <div data-aos="fade-left" className="flex-1 flex justify-center lg:justify-end">
