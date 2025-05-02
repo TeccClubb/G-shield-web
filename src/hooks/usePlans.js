@@ -27,6 +27,8 @@ export const usePlans = () => {
         const response = await axios
           .get(GET_PLANS_ROUTE)
           .then((res) => res.data);
+          console.log(GET_PLANS_ROUTE);
+          console.log(response);
         if (response.status) {
           dispatch(setPlans(response.plans));
         }

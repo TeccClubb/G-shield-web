@@ -12,6 +12,7 @@ import AboutSection from '@/components/home/AboutSection';
 import DownloadSection from '@/components/home/DownloadSection';
 import { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import FaqSection from '@/components/home/FaqSection';
  
 const HeroSection =()=> {
     const searchParams = useSearchParams();
@@ -26,7 +27,7 @@ const HeroSection =()=> {
       }
     }, [searchParams]);
     return (
-        <div className='bg-zinc-300   '>
+        <div className='bg-zinc-300 w-full   '>
             <div>
             <VpnIntroductionSection></VpnIntroductionSection>
              <FeaturesSection></FeaturesSection>
@@ -35,6 +36,7 @@ const HeroSection =()=> {
              <DownloadProcess></DownloadProcess>
              <DownloadSection></DownloadSection>
              <ActiveServers></ActiveServers>
+             <FaqSection></FaqSection>
 
             </div>
             
