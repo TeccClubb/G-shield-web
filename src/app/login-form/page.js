@@ -115,12 +115,12 @@ export default function LoginButtonWithModal({ open, handleClose }) {
                         <Controller
                             name="email"
                             control={control}
-                            rules={{ required: "Email or Username is required" }}
+                            rules={{ required: "Email is required" }}
                             render={({ field }) => (
                                 <TextField
                                     {...field}
                                     variant="standard"
-                                    label="Email or Username"
+                                    label="Email"
                                     fullWidth
                                     margin="dense"
                                     error={!!errors.email}
