@@ -22,8 +22,9 @@ const PricingPlans = () => {
   }, []);
 
   return (
-    <section data-aos="fade-down" className=" overflow-hidden w-full bg-white py-15 px-6 mb-3 lg:px-20" id="home">
+    <section id="pricing" data-aos="fade-down" className="py-16 mt-3 overflow-hidden  g:px-20 px-6 bg-white text-center">
       <div data-aos="zoom-in-up" className='max-w-6xl mx-auto px-4'>
+
         <div className="inline-block px-4 py-1 mb-4 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
           Pricing
         </div>
