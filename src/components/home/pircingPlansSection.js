@@ -1,25 +1,25 @@
-import React, { useEffect } from 'react';
-import { Card, CardContent, Button } from '@mui/material';
-import CheckIcon from '@mui/icons-material/Check';
-import Typography from '@mui/material/Typography';
-import Link from 'next/link';
-import { CHECKOUT_PAGE_PATH } from '@/lib/pathnames';
-import { usePlans } from '@/hooks/usePlans';
-import Image from 'next/image';
+  import React, { useEffect } from 'react';
+  import { Card, CardContent, Button } from '@mui/material';
+  import CheckIcon from '@mui/icons-material/Check';
+  import Typography from '@mui/material/Typography';
+  import Link from 'next/link';
+  import { CHECKOUT_PAGE_PATH } from '@/lib/pathnames';
+  import { usePlans } from '@/hooks/usePlans';
+  import Image from 'next/image';
 
-const PricingPlans = () => {
-  const { plans, isPlansLoading } = usePlans();
-  const [myPlans, setMyPlans] = React.useState(plans);
+  const PricingPlans = () => {
+    const { plans, isPlansLoading } = usePlans();
+    const [myPlans, setMyPlans] = React.useState(plans);
 
-  useEffect(() => {
-    console.log(plans);
-    setMyPlans(plans);
-  }, [plans]); // Update myPlans whenever plans change
+    useEffect(() => {
+      console.log(plans);
+      setMyPlans(plans);
+    }, [plans]); // Update myPlans whenever plans change
 
-  useEffect(() => {
-    const AOS = require('aos');  // Import AOS library for animations
-    AOS.init({ duration: 1200, once: true });
-  }, []);
+    useEffect(() => {
+      const AOS = require('aos');  // Import AOS library for animations
+      AOS.init({ duration: 1200, once: true });
+    }, []);
 
   return (
     <section id="pricing" data-aos="fade-down" className="py-16 mt-3 overflow-hidden  g:px-20 px-6 bg-white text-center">
@@ -53,65 +53,65 @@ const PricingPlans = () => {
                       {plan.name}
                     </div>
 
-                    <div className="text-3xl font-bold mt-4">
-                      ${plan.price}
-                      <span className="text-base font-medium">/{plan.duration_unit}</span>
+                      <div className="text-3xl font-bold mt-4">
+                        ${plan.price}
+                        <span className="text-base font-medium">/{plan.duration_unit}</span>
+                      </div>
+
+                      <div className="text-base font-semibold mt-2">{plan.name}</div>
+                      <ul className="space-y-4 text-sm mt-4 font-jakarta">
+                        {/* Render features from the description array */}
+                        {plan.description?.split(',').map((feature, index) => (
+                          <li key={index} className="flex items-center gap-2">
+                            {/* <CheckIcon sx={{ color: 'green' }} /> */}
+                            <div
+                          
+                            className={`rounded-full p-1 ${plan.name === "Gold"? 'bg-white' : 'bg-green-600'}`} // Set background white for highlighted, green for non-highlighted
+                            style={{ width: '24px', height: '24px' }} // Adjust size of the background for the icon
+                          >
+
+                            <Image
+                              src={plan.name==="Gold" ? "/home/vector.svg" : "/home/tickicon.svg"} // Use vector.svg for highlighted, tickicon.svg for others
+                              alt="Check Icon"
+                              width={20}
+                              height={20}
+                              className={`${plan.name==="Gold" ? 'text-green-600' : 'text-white'}`} // Set text color green for non-highlighted, white for highlighted
+                            />
+                            </div>
+                            {feature.trim()}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+                  </Typography>
 
-                    <div className="text-base font-semibold mt-2">{plan.name}</div>
-                    <ul className="space-y-4 text-sm mt-4 font-jakarta">
-                      {/* Render features from the description array */}
-                      {plan.description?.split(',').map((feature, index) => (
-                        <li key={index} className="flex items-center gap-2">
-                          {/* <CheckIcon sx={{ color: 'green' }} /> */}
-                          <div
-                        
-                          className={`rounded-full p-1 ${plan.name === "Gold"? 'bg-white' : 'bg-green-600'}`} // Set background white for highlighted, green for non-highlighted
-                          style={{ width: '24px', height: '24px' }} // Adjust size of the background for the icon
-                        >
-
-                          <Image
-                            src={plan.name==="Gold" ? "/home/vector.svg" : "/home/tickicon.svg"} // Use vector.svg for highlighted, tickicon.svg for others
-                            alt="Check Icon"
-                            width={20}
-                            height={20}
-                            className={`${plan.name==="Gold" ? 'text-green-600' : 'text-white'}`} // Set text color green for non-highlighted, white for highlighted
-                          />
-                          </div>
-                          {feature.trim()}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="mt-6">
+                    <Button
+                      component={Link}
+                      href={CHECKOUT_PAGE_PATH(plan.id)}
+                      variant="contained"
+                      fullWidth
+                      sx={{
+                        backgroundColor: plan.name === "Gold" ? '#fff' : '#f3f4f6',
+                        color: plan.name === "Gold" ? '#16a34a' : '#000',
+                        '&:hover': {
+                          backgroundColor: '#e5e7eb',
+                        },
+                        mt: 2,
+                        borderRadius: '0.5rem',
+                        textTransform: 'capitalize',
+                      }}
+                    >
+                      Choose Plan
+                    </Button>
                   </div>
-                </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  };
 
-                <div className="mt-6">
-                  <Button
-                    component={Link}
-                    href={CHECKOUT_PAGE_PATH(plan.id)}
-                    variant="contained"
-                    fullWidth
-                    sx={{
-                      backgroundColor: plan.name === "Gold" ? '#fff' : '#f3f4f6',
-                      color: plan.name === "Gold" ? '#16a34a' : '#000',
-                      '&:hover': {
-                        backgroundColor: '#e5e7eb',
-                      },
-                      mt: 2,
-                      borderRadius: '0.5rem',
-                      textTransform: 'capitalize',
-                    }}
-                  >
-                    Choose Plan
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-export default PricingPlans;
+  export default PricingPlans;
