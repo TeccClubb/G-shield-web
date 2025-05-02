@@ -14,7 +14,7 @@ export default function VpnIntroductionSection() {
             <div
                 className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 w-full h-full"
                 style={{
-                    backgroundImage: "url('/home/bgImg.png')",
+                    backgroundImage: "url('/home/bgimg.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
