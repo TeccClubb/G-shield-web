@@ -39,7 +39,7 @@ export default function DownloadProcess() {
         <span className="bg-green-100 text-green-600 text-sm font-semibold px-4 py-2 rounded-full" data-aos="down">
           How it is work
         </span>
-        <h2 className="text-2xl md:text-4xl font-bold mt-4"  data-aos="zoom-in">
+        <h2 className="text-2xl md:text-4xl font-bold mt-4 text-black"  data-aos="zoom-in">
           GShield Download And Installing Process
         </h2>
       </div>
