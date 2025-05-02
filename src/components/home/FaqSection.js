@@ -60,7 +60,10 @@ export default function FaqSection() {
               onClick={() => toggleFaq(index)}
               className="w-full text-left px-6 py-4 flex justify-between items-center font-medium focus:outline-none"
             >
+              <div className="font-Manrope font-bold">
+
               {faq.question}
+              </div>
               <span className="ml-2">
                 {openIndex === index ? (
                   <svg
@@ -86,7 +89,7 @@ export default function FaqSection() {
               </span>
             </button>
             {openIndex === index && (
-              <div className="px-6 pb-4 text-sm text-black bg-white">
+              <div className="px-6 pb-4 font-Poppins text-base font-normal text-black bg-white">
                 {faq.answer}
               </div>
             )}

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+import { CheckedIcon } from "@/icons";
 
 export default function AboutSection() {
   useEffect(() => {
@@ -48,7 +49,7 @@ export default function AboutSection() {
           </p>
 
           <h6 className="text-xl w-full text-black font-semibold flex gap-2">
-            <CheckCircle2 className="text-green-700" /> Enhanced Privacy &
+            <CheckedIcon /> Enhanced Privacy &
             Security
           </h6>
 
@@ -59,7 +60,7 @@ export default function AboutSection() {
           </p>
 
           <h6 className="text-xl w-full text-black font-semibold flex gap-2">
-            <CheckCircle2 className="text-green-700" /> Fast & Reliable
+          <CheckedIcon /> Fast & Reliable
             Connection
           </h6>
 
