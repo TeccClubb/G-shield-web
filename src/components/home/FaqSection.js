@@ -38,7 +38,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="py-20 bg-white text-black">
+    <section className="py-20 bg-white text-black overflow-hidden">
       <div className="text-center mb-12">
         <span className="bg-green-100 text-green-600 text-sm font-semibold px-4 py-1 rounded-full">
           Faqs

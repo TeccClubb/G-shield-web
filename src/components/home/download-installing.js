@@ -34,7 +34,7 @@ export default function DownloadProcess() {
     AOS.init({ duration: 1200 });
 }, []);
   return (
-    <section className="py-16 mt-3 bg-white" data-aos="fade-up">
+    <section className="py-16 mt-3 bg-white overflow-hidden" data-aos="fade-up">
       <div className="text-center mb-12" data-aos="fade-down">
         <span className="bg-green-100 text-green-600 text-sm font-semibold px-4 py-2 rounded-full" data-aos="down">
           How it is work
@@ -57,7 +57,7 @@ export default function DownloadProcess() {
                 key={step.id}
                 className="relative flex items-start gap-6 group cursor-pointer"
                 data-aos="fade-up"
-                data-aos-delay={index * 150}
+               
               >
                 <div className="flex flex-col items-center relative z-10">
                   <div className="absolute left-2/2 transform -translate-x-2/2 z-10">

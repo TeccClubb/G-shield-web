@@ -41,7 +41,7 @@ export default function Footer() {
                 <li>Press/Media Kit</li>
               </ul>
             </div>
-            <div data-aos="fade-up" data-aos-delay="100">
+            <div data-aos="fade-up" >
               <h3 className="font-semibold mb-3">Products</h3>
               <ul className="space-y-2 self-stretch justify-center text-gray-500 text-sm font-medium leading-normal">
                 <li>VPN for Windows</li>
@@ -50,7 +50,7 @@ export default function Footer() {
                 <li>VPN for iPhone</li>
               </ul>
             </div>
-            <div data-aos="fade-up" data-aos-delay="200">
+            <div data-aos="fade-up" >
               <h3 className="font-semibold mb-3">Other Resources</h3>
               <ul className="space-y-2 self-stretch justify-center text-gray-500 text-sm font-medium leading-normal">
                 <li>What is My IP</li>
@@ -62,7 +62,7 @@ export default function Footer() {
                 <li>Free Proxy</li>
               </ul>
             </div>
-            <div data-aos="fade-up" data-aos-delay="300">
+            <div data-aos="fade-up" >
               <h3 className="font-semibold mb-3">Legal</h3>
               <ul className="space-y-2 self-stretch justify-center text-gray-500 text-sm font-medium leading-normal">
                 <li>Imprint</li>
@@ -73,7 +73,7 @@ export default function Footer() {
                 <li>Report Abuse</li>
               </ul>
             </div>
-            <div data-aos="fade-up" data-aos-delay="400">
+            <div data-aos="fade-up" >
               <h3 className="font-semibold mb-3">Social</h3>
               <ul className="space-y-2 self-stretch justify-center text-gray-500 text-sm font-medium leading-normal">
                 <li>Twitter</li>

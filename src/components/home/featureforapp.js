@@ -29,7 +29,7 @@ export default function FeaturesSection() {
     ];
 
     return (
-        <section id="feature" className="py-16 bg-white text-center" data-aos="fade-up">
+        <section id="feature" className="py-16 bg-white text-center overflow-hidden" data-aos="fade-up">
             <div className="max-w-6xl mx-auto px-4">
                 <div
                     className="inline-block px-4 py-1 mb-4 bg-green-100 text-green-700 rounded-full text-sm font-semibold"
@@ -73,7 +73,7 @@ export default function FeaturesSection() {
                     </div>
 
                     {/* Right Features */}
-                    <div className="flex flex-col gap-12 mt-16" data-aos="fade-left">
+                    <div className="flex flex-col gap-12 mt-16" >
                         {features.slice(2, 4).map((feature, index) => (
                             <div key={index} className="flex flex-col items-start text-left gap-2">
                                 <div className="bg-green-100 p-2 rounded-full">
