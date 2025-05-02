@@ -9,78 +9,63 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import { GET_PURCHASE_HISTORY_ROUTE } from "@/lib/constants";
-import useSWR from "swr";
-import { getFormattedDate } from "@/lib/utils";
-import { useUserCookie } from "@/hooks/use-cookies";
-import DownloadInvoiceButton from "./DownloadInvoiceButton";
 import { Box, CircularProgress, Typography } from "@mui/material";
+import { GET_SERVERS_ROUTE } from "@/lib/constants";
+import useSWR from "swr";
+import { CheckedIcon } from "@/icons";
+import Image from "next/image";
 
-const PaymentHistoryTable = () => {
-  const { user } = useUserCookie();
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  const fetcher = (url) =>
-    fetch(url, {
-      headers: {
-        Authorization: `Bearer ${user.access_token}`,
-      },
-    }).then((res) => res.json());
-
+const AllServersSection = () => {
   const [page, setPage] = useState(1);
 
-  const { data: history, isLoading } = useSWR(
-    GET_PURCHASE_HISTORY_ROUTE(page),
+  const { data: servers, isLoading } = useSWR(
+    GET_SERVERS_ROUTE(page),
     fetcher,
     {
       keepPreviousData: true,
     }
   );
 
-  const rowsPerPage = history?.meta.per_page ?? 5;
+  const rowsPerPage = servers?.meta.per_page ?? 10;
 
   const pages = useMemo(() => {
-    return history?.meta.total
-      ? Math.ceil(history.meta.total / rowsPerPage)
+    return servers?.meta.total
+      ? Math.ceil(servers.meta.total / rowsPerPage)
       : 0;
-  }, [history?.meta.total, rowsPerPage]);
+  }, [servers?.meta.total, rowsPerPage]);
 
   const handleChangePage = (_, newPage) => {
     setPage(newPage + 1);
   };
 
   return (
-    <Paper className="max-w-[calc(100vw-3rem)]">
+    <Paper
+      className="max-w-[calc(100vw-3rem)] w-full z-[1]"
+      sx={{ backgroundColor: "#FFFFFF99" }}
+    >
       <TableContainer className="rounded-2xl">
-        <Table
-          aria-label="Payment History"
-          
-          //   classNames={{
-          //     th: "text-white bg-primary",
-          //     wrapper: "bg-opacity-60",
-          //   }}
-        >
+        <Table aria-label="VPN Servers">
           <TableHead className="bg-green-600">
             <TableRow>
-              <TableCell sx={{ color: "white", fontWeight: 700, fontSize: 14 }}>
-                Plan Name
+              <TableCell
+                colSpan={2}
+                sx={{ color: "white", fontWeight: 700, fontSize: 14 }}
+              >
+                Country
               </TableCell>
               <TableCell sx={{ color: "white", fontWeight: 700, fontSize: 14 }}>
-                Duration
+                City
               </TableCell>
               <TableCell sx={{ color: "white", fontWeight: 700, fontSize: 14 }}>
-                Amount Paid
+                AdBlock
               </TableCell>
               <TableCell sx={{ color: "white", fontWeight: 700, fontSize: 14 }}>
-                Start Date
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: 700, fontSize: 14 }}>
-                End Date
+                Threat Block
               </TableCell>
               <TableCell sx={{ color: "white", fontWeight: 700, fontSize: 14 }}>
                 Status
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: 700, fontSize: 14 }}>
-                Invoice
               </TableCell>
             </TableRow>
           </TableHead>
@@ -95,33 +80,40 @@ const PaymentHistoryTable = () => {
               </TableRow>
             )}
 
-            {history && history.data.length === 0 && (
+            {servers && servers.data.length === 0 && (
               <TableRow>
                 <TableCell colSpan={7}>
                   <Typography variant="body2" align="center" p={4}>
-                    No Purchase History
+                    No Servers Found
                   </Typography>
                 </TableCell>
               </TableRow>
             )}
 
-            {history &&
-              history.data.map((item) => (
-                <TableRow key={item.id}>
-                  <TableCell>{item.plan.name}</TableCell>
+            {servers &&
+              servers.data.map((item) => (
+                <TableRow key={item.image_url} className="capitalize">
                   <TableCell>
-                    {item.plan.duration + " " + item.plan.duration_unit}
-                  </TableCell>
-                  <TableCell>${item.amount_paid}</TableCell>
-                  <TableCell>{getFormattedDate(item.start_date)}</TableCell>
-                  <TableCell>{getFormattedDate(item.end_date)}</TableCell>
-                  <TableCell>{item.status}</TableCell>
-                  <TableCell>
-                    <DownloadInvoiceButton
-                      purchaseId={item.id}
-                      token={user.access_token}
+                    <Image
+                      className="w-9 h-7 rounded-md"
+                      src={item.image_url}
+                      alt="flag not found"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      placeholder="blur"
+                      blurDataURL={item.image_url}
                     />
                   </TableCell>
+                  <TableCell>{item.name}</TableCell>
+                  <TableCell>{item.sub_server.name}</TableCell>
+                  <TableCell>
+                    <CheckedIcon />
+                  </TableCell>
+                  <TableCell>
+                    <CheckedIcon />
+                  </TableCell>
+                  <TableCell>{item.status}</TableCell>
                 </TableRow>
               ))}
           </TableBody>
@@ -131,7 +123,7 @@ const PaymentHistoryTable = () => {
         <TablePagination
           rowsPerPageOptions={[]}
           component="div"
-          count={history ? history.meta.total : 0}
+          count={servers ? servers.meta.total : 0}
           rowsPerPage={rowsPerPage}
           page={page - 1}
           onPageChange={handleChangePage}
@@ -141,4 +133,4 @@ const PaymentHistoryTable = () => {
   );
 };
 
-export default PaymentHistoryTable;
+export default AllServersSection;

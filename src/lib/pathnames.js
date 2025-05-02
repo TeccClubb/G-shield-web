@@ -16,3 +16,6 @@ export const INVOICE_PAGE_PATH = "/invoice";
 export const DOWNLOADS_PAGE_PATH = "/downloads";
 
 export const LOGIN_PAGE_PATH = "/login-form";
+
+export const SERVERS_PAGE_PATH = "/servers";
+

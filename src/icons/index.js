@@ -9,6 +9,7 @@ import StateIcon from "./StateIcon";
 import DownloadIcon from "./DownloadIcon";
 import VerifiedIcon from "./VerifiedIcon";
 import ErrorIcon from "./ErrorIcon";
+import CheckedIcon from "./CheckedIcon";
 
 export {
   DashboardIcon,
@@ -22,4 +23,5 @@ export {
   DownloadIcon,
   VerifiedIcon,
   ErrorIcon,
+  CheckedIcon,
 };
